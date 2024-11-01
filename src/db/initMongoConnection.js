@@ -1,5 +1,3 @@
-//mongodb+srv://mrgzhi:<db_password>@cluster1.ii9pv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1
-
 import mongoose from 'mongoose';
 import { env } from '../utils/env.js';
 
