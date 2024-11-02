@@ -9,7 +9,7 @@ import { errorHandler } from './middlewares/errorHandler.js';
 export const setupServer = () => {
   const app = express();
   app.use(cors());
-
+  app.use(express.json());
   // app.use(logger);
 
   // Якщо прийде будь-який запит, що починається з /contacts, шукай обробник цього запиту у об'єкті contactsRouter
