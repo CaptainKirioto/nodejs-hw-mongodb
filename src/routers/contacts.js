@@ -7,8 +7,20 @@ const contactsRouter = Router();
 contactsRouter.get('/', ctrlWrapper(contactsControllers.getContactsController));
 
 contactsRouter.get(
-  '/:contactsId',
+  '/:id',
   ctrlWrapper(contactsControllers.getContactByIdController),
+);
+
+contactsRouter.post('/', ctrlWrapper(contactsControllers.addContactController));
+
+contactsRouter.patch(
+  '/:id',
+  ctrlWrapper(contactsControllers.patchContactController),
+);
+
+contactsRouter.delete(
+  '/:id',
+  ctrlWrapper(contactsControllers.deleteContactController),
 );
 
 export default contactsRouter;
