@@ -14,7 +14,7 @@ export const getContactById = async (contactId) => {
 };
 
 export const addContact = (payload) => {
-  ContactCollection.create(payload);
+  return ContactCollection.create(payload);
 };
 
 export const patchContact = async ({ _id, payload, options = {} }) => {
