@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import { typeList } from '../../constants/contacts.js';
 
 const contactSchema = new Schema(
   {
@@ -17,7 +18,7 @@ const contactSchema = new Schema(
     },
     contactType: {
       type: String,
-      enum: ['work', 'home', 'personal'],
+      enum: typeList,
       required: true,
       default: 'personal',
     },
@@ -26,6 +27,16 @@ const contactSchema = new Schema(
     timestamps: true,
   },
 );
+
+// contactSchema.post('save', (error, data, next) => {
+//   error.status = 400;
+//   next();
+// });
+
+// contactSchema.post('findOneAndUpdate', (error, data, next) => {
+//   error.status = 400;
+//   next();
+// });
 
 const ContactCollection = model('contact', contactSchema);
 export default ContactCollection;
