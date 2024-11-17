@@ -3,6 +3,7 @@ import cors from 'cors';
 import { env } from './utils/env.js';
 import { logger } from './middlewares/logger.js';
 import contactsRouter from './routers/contacts.js';
+import authRouter from './routers/auth.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 
@@ -14,6 +15,7 @@ export const setupServer = () => {
 
   // Якщо прийде будь-який запит, що починається з /contacts, шукай обробник цього запиту у об'єкті contactsRouter
   app.use('/contacts', contactsRouter);
+  app.use('/auth', authRouter);
 
   app.use(notFoundHandler); // for when address is not found; should be placed right after routes
 
