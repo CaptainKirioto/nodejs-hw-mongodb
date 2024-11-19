@@ -18,6 +18,12 @@ const userSchema = new Schema(
   { versionKey: false, timestamps: true },
 );
 
+userSchema.methods.toJSON = function () {
+  const obj = this.toObject();
+  delete obj.password;
+  return obj;
+};
+
 const UserCollection = model('user', userSchema);
 
 export default UserCollection;
