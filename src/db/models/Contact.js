@@ -3,6 +3,9 @@ import { typeList } from '../../constants/contacts.js';
 
 const contactSchema = new Schema(
   {
+    photo: {
+      type: String,
+    },
     name: {
       type: String,
       required: true,
@@ -30,6 +33,7 @@ const contactSchema = new Schema(
   },
   {
     timestamps: true,
+    versionKey: false,
   },
 );
 
