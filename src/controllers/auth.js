@@ -60,6 +60,15 @@ export const requestResetEmailController = async (req, res) => {
   });
 };
 
+export const resetPasswordController = async (req, res) => {
+  await authServices.resetPassword(req.body);
+  res.json({
+    status: 200,
+    message: 'Password has been successfully reset.',
+    data: {},
+  });
+};
+
 export const logoutController = async (req, res) => {
   if (req.cookies.sessionId) {
     await authServices.logout(req.cookies.sessionId);
