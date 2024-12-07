@@ -49,7 +49,7 @@ export const getContacts = async ({
 export const getContactById = async (contactId, userId) => {
   try {
     return await ContactCollection.findOne({ _id: contactId, userId });
-  } catch (error) {
+  } catch {
     return null;
   }
 };
